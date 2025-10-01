@@ -43,38 +43,32 @@
         </div>
 
         <div class="min-h-[200px] grid grid-cols-3 gap-5 p-3">
-            <div
-                class="border-2 border-gray-300 text-center p-2 rounded-xl h-[120px] flex flex-col items-center justify-center">
+            <div id="add-button" class="border-2 border-gray-300 text-center p-2 rounded-xl h-[120px] flex flex-col items-center justify-center">
                 <img src="assets/wallet1.png" class="mb-2" alt="">
                 <h2 class="text-[#080808b3]">Add Money</h2>
             </div>
 
-            <div
-                class="border-2 border-gray-300 text-center p-3 rounded-xl h-[120px] flex flex-col items-center justify-center">
+            <div id="cash-out-button" class="border-2 border-gray-300 text-center p-3 rounded-xl h-[120px] flex flex-col items-center justify-center">
                 <img src="assets/send1.png" class="mb-2" alt="">
                 <h2 class="text-[#080808b3]">Cashout</h2>
             </div>
 
-            <div
-                class="border-2 border-gray-300 text-center p-2 rounded-xl h-[120px] flex flex-col items-center justify-center">
+            <div id="transfer-button" class="border-2 border-gray-300 text-center p-2 rounded-xl h-[120px] flex flex-col items-center justify-center">
                 <img src="assets/money1.png" class="mb-2" alt="">
                 <h2 class="text-[#080808b3]">Transfer Money</h2>
             </div>
 
-            <div
-                class="border-2 border-gray-300 text-center p-3 rounded-xl h-[120px] flex flex-col items-center justify-center">
+            <div id="bonas-button" class="border-2 border-gray-300 text-center p-3 rounded-xl h-[120px] flex flex-col items-center justify-center">
                 <img src="assets/bonus1.png" class="mb-2" alt="">
                 <h2 class="text-[#080808b3]">Get Bonas</h2>
             </div>
 
-            <div
-                class="border-2 border-gray-300 text-center p-3 rounded-xl h-[120px] flex flex-col items-center justify-center">
+            <div id="payBill-button" class="border-2 border-gray-300 text-center p-3 rounded-xl h-[120px] flex flex-col items-center justify-center">
                 <img src="assets/purse1.png" class="mb-2" alt="">
                 <h2 class="text-[#080808b3]">Pay Bill</h2>
             </div>
 
-            <div
-                class="border-2 border-gray-300 text-center p-3 rounded-xl h-[120px] flex flex-col items-center justify-center">
+            <div id="transaction-button" class="border-2 border-gray-300 text-center p-3 rounded-xl h-[120px] flex flex-col items-center justify-center">
                 <img src="assets/transaction1.png" class="mb-2" alt="">
                 <h2 class="text-[#080808b3]">Transaction</h2>
             </div>
@@ -83,8 +77,9 @@
 
     <section class="all-form-sections max-w-4xl mx-auto">
         <!-- add money -->
-        <div>
+        <div class="form" id="add-money-parent">
             <h1 class="text-xl font-bold mt-8 mb-4 ml-3">Add Money</h1>
+
             <form action="" class="bg-white rounded-2xl p-6">
                 <div>
                     <label class="font-semibold" for="">Select A Bank</label>
@@ -115,6 +110,75 @@
                 <button id="add-money-btn" class="btn bg-[#0874F2] text-white mt-6 w-full rounded-3xl">Add Money</button>
             </form>
         </div>
+
+        <!-- cash out -->
+        <div class="form" id="cash-out-parent" style="display: none;">
+            <h1 class="text-xl font-bold mt-8 mb-4 ml-3">Cash Out</h1>
+
+            <form action="" class="bg-white rounded-2xl p-6">
+                <div>
+                    <label class="font-semibold" for="">Agent Number</label><br>
+                    <input id="agent-number" type="text" placeholder="Enter 11 digit account number" class="input bg-[#f4f5f7] my-3 rounded-3xl w-full">
+                </div>
+
+                <div>
+                    <label class="font-semibold" for="">Amount</label><br>
+                    <input id="withdraw-amount" type="text" placeholder="Enter amount to withdraw" class="input bg-[#f4f5f7] my-3 rounded-3xl w-full">
+                </div>
+
+                <div>
+                    <label class="font-semibold" for="">Pin Number</label><br>
+                    <input id="withdraw-pin" type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7] my-3 rounded-3xl w-full">
+                </div>
+
+                <button id="withdraw-money-btn" class="btn bg-[#0874F2] text-white mt-6 w-full rounded-3xl">Withdraw Money</button>
+            </form>
+        </div>
+
+        <!-- transfer money -->
+        <div class="form" id="transfer-money-parent" style="display: none;">
+            <h1 class="text-xl font-bold mt-8 mb-4 ml-3">Transfer Money</h1>
+
+            <form action="" class="bg-white rounded-2xl p-6">
+                <div>
+                    <label class="font-semibold" for="">User Account Number</label><br>
+                    <input id="transfer-account-number" type="text" placeholder="Enter 11 digit number" class="input bg-[#f4f5f7] my-3 rounded-3xl w-full">
+                </div>
+
+                <div>
+                    <label class="font-semibold" for="">Amount</label><br>
+                    <input id="transfer-amount" type="text" placeholder="Enter amount to transfer" class="input bg-[#f4f5f7] my-3 rounded-3xl w-full">
+                </div>
+
+                <div>
+                    <label class="font-semibold" for="">Pin Number</label><br>
+                    <input id="transfer-pin" type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7] my-3 rounded-3xl w-full">
+                </div>
+
+                <button id="transfer-money-btn" class="btn bg-[#0874F2] text-white mt-6 w-full rounded-3xl">Send Now</button>
+            </form>
+        </div>
+
+        <!-- get bonas -->
+        <div class="form" id="get-bonas-parent" style="display: none;">
+            <h1 class="text-xl font-bold mt-8 mb-4 ml-3">Get Bonus</h1>
+
+            <form action="" class="bg-white rounded-2xl p-6">
+                <div>
+                    <label class="font-semibold" for="">Enter Bonus Coupon</label><br>
+                    <input id="coupon-pin" type="text" placeholder="Enter your coupon" class="input bg-[#f4f5f7] my-3 rounded-3xl w-full">
+                </div>
+
+                <button id="bonas1-btn" class="btn bg-[#0874F2] text-white mt-6 w-full rounded-3xl">Get Bonus</button>
+            </form>
+        </div>
+
+        <!-- pay bill -->
+        <div class="form" id="pay-bil-parent" style="display: none;">
+            <h1 class="text-xl font-bold mt-8 mb-4 ml-3">Pay Bill</h1>
+
+        </div>
+
     </section> 
 
     <script src="home.js"></script>
