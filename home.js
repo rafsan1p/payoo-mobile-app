@@ -58,6 +58,10 @@ document.getElementById('add-money-btn')
         const bank = getInputValue('bank');
         const accountNumber = getInputValue('account-number');
         const amount = getInputValNumber('add-amount');
+        if(amount <= 0){
+            alert("Invalid amount.");
+            return;
+        }
         const pin = getInputValNumber('add-pin');
 
         const availableBalance = getInnerTextNum('available-balance');
@@ -94,6 +98,11 @@ document.getElementById('withdraw-money-btn')
         
         const availableBalance = getInnerTextNum('available-balance');
 
+        if(amount <= 0 || amount > availableBalance){
+            alert("Invalid amount.");
+            return;
+        }
+
         if(agentNumber.length < 11){
             alert("please provide valid account number");
             return;
@@ -125,6 +134,10 @@ document.getElementById('transfer-money-btn')
         
         const availableBalance = getInnerTextNum('available-balance');
 
+        if(amount <= 0 || amount > availableBalance){
+            alert("Invalid amount.");
+            return;
+        }
         if(accountNumber.length < 11){
             alert("please provide valid account number");
             return;
@@ -178,6 +191,10 @@ document.getElementById('pay-money-btn')
 
         const availableBalance = getInnerTextNum('available-balance');
 
+        if(amount <= 0 || amount > availableBalance){
+            alert("Invalid amount.");
+            return;
+        }
         if(accountNumber.length < 1){
             alert("please provide valid account number");
             return;
