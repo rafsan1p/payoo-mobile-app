@@ -19,7 +19,7 @@
 
 </head>
 
-<body class="bg-[#f4f5f7] ">
+<body class="bg-[#f4f5f7] min-h-screen">
     <section class="max-w-4xl mx-auto bg-white rounded-b-xl">
         <div class="min-h-[50px] flex justify-between items-center border-b-1 border-gray-400 p-3 md:p-4">
             <div class="flex">
@@ -210,6 +210,18 @@
             </form>
         </div>
 
+
+        <!--  transaction history-->
+        <div class="form pb-10" id="transaction-parent" style="display: none;">
+            <div class="flex justify-between items-center">
+                <h1 class="text-xl font-bold mt-8 mb-4 ml-3">Transaction History</h1>
+                <p class="mr-3 mt-5 text-[#08080880]">View All</p>
+            </div>
+
+            <div id="transaction-container">
+                
+            </div>
+        </div>
     </section> 
 
     <script src="home.js"></script>

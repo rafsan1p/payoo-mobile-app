@@ -1,5 +1,6 @@
 const validPin = 1234;
 const couponPin = 1234;
+const transactionData = [];
 
 //functions to get input values
 function getInputValNumber(id){
@@ -74,6 +75,12 @@ document.getElementById('add-money-btn')
 
         setInnerText(total);
 
+        const data = {
+            name : "Add Money",
+            date : new Date().toLocaleString()
+        }
+        transactionData.push(data);
+
     }) 
 
 //Cash Out money feature
@@ -98,6 +105,12 @@ document.getElementById('withdraw-money-btn')
 
         const total = availableBalance - amount;
         setInnerText(total);
+
+        const data = {
+            name : "Cash Out",
+            date : new Date().toLocaleString()
+        }
+        transactionData.push(data);
     })
 
 
@@ -123,6 +136,12 @@ document.getElementById('transfer-money-btn')
 
         const total = availableBalance - amount;
         setInnerText(total);
+
+        const data = {
+            name : "Transfer Money",
+            date : new Date().toLocaleString()
+        }
+        transactionData.push(data);
     })
 
 
@@ -139,6 +158,12 @@ document.getElementById('bonas1-btn')
         }
         const total = availableBalance + amount;
         setInnerText(total);
+
+        const data = {
+            name : "Get Bonas",
+            date : new Date().toLocaleString()
+        }
+        transactionData.push(data);
     })
 
 
@@ -166,7 +191,39 @@ document.getElementById('pay-money-btn')
 
         setInnerText(total);
 
+        const data = {
+            name : "Pay Bill",
+            date : new Date().toLocaleString()
+        }
+        transactionData.push(data);
     }) 
+
+//transaction feature
+document.getElementById('transaction-button')
+    .addEventListener('click', function(){
+        const transactionContainer = document.getElementById('transaction-container');
+        transactionContainer.innerText = '';
+
+        for(const data of transactionData){
+            const div = document.createElement("div");
+            div.innerHTML = `
+
+                <div class="bg-white rounded-2xl p-3 flex justify-between items-center mb-4">
+                    <div class="flex items-center">
+                        <img src="assets/wallet1.png" alt="" class="p-3 rounded-full bg-[#f4f5f7] mx-auto">
+
+                        <div class="ml-3">
+                            <h1>${data.name}</h1>
+                            <p>${data.date}</p>
+                        </div>
+                    </div>
+
+                    <i class="fa-solid fa-ellipsis-vertical mr-4"></i>
+                </div>
+            `;
+            transactionContainer.appendChild(div);
+        }
+    })
 
 
 //toggling feature
@@ -200,4 +257,9 @@ document.getElementById('payBill-button')
     .addEventListener('click', function(){
         handleToggle('pay-bil-parent');
         handleBtn('payBill-button');
+    })
+document.getElementById('transaction-button')
+    .addEventListener('click', function(){
+        handleToggle('transaction-parent');
+        handleBtn('transaction-button');
     })
