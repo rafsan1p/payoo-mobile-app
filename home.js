@@ -27,6 +27,19 @@ function setInnerText(val){
 }
 
 
+//function to active button when toggling
+function handleBtn(id){
+    const formBtns = document.getElementsByClassName('form-btn');
+    for(const btn of formBtns){
+        btn.classList.remove("active", "border-[#0874f2]", "bg-[#0874f20d]");
+        btn.classList.add("border-gray-300");
+    }
+
+    const addBtn = document.getElementById(id);
+    addBtn.classList.add("active", "border-[#0874f2]", "bg-[#0874f20d]");
+    addBtn.classList.remove("border-gray-300");
+}
+
 //function to toggle
 function handleToggle(id){
     const forms = document.getElementsByClassName('form');
@@ -129,29 +142,62 @@ document.getElementById('bonas1-btn')
     })
 
 
+//pay bill feature
+document.getElementById('pay-money-btn')
+    .addEventListener('click', function(e){
+        e.preventDefault();
+        const bill = getInputValue('bill');
+        const accountNumber = getInputValue('biller-number');
+        const amount = getInputValNumber('pay-amount');
+        const pin = getInputValNumber('pay-pin');
+
+        const availableBalance = getInnerTextNum('available-balance');
+
+        if(accountNumber.length < 1){
+            alert("please provide valid account number");
+            return;
+        }
+        if(pin !== validPin){
+            alert("please provide valid pin number");
+            return;
+        }
+
+        const total = availableBalance - amount;
+
+        setInnerText(total);
+
+    }) 
+
+
 //toggling feature
 
 document.getElementById('add-button')
     .addEventListener('click', function(){
         handleToggle('add-money-parent');
-    })
+        handleBtn('add-button');
+});
+
 
 document.getElementById('cash-out-button')
     .addEventListener('click', function(){
         handleToggle('cash-out-parent');
+        handleBtn('cash-out-button');
     })
 
 document.getElementById('transfer-button')
     .addEventListener('click', function(){
-    handleToggle('transfer-money-parent');
+        handleToggle('transfer-money-parent');
+        handleBtn('transfer-button');
     })
 
 document.getElementById('bonas-button')
     .addEventListener('click', function(){
         handleToggle('get-bonas-parent');
+        handleBtn('bonas-button');
     })
 
 document.getElementById('payBill-button')
     .addEventListener('click', function(){
         handleToggle('pay-bil-parent');
+        handleBtn('payBill-button');
     })

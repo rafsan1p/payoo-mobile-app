@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
 
+    <link rel="stylesheet" href="styles.css">
     <!-- daisyUI cdn -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <!-- tailwind cdn -->
@@ -43,32 +44,32 @@
         </div>
 
         <div class="min-h-[200px] grid grid-cols-3 gap-5 p-3">
-            <div id="add-button" class="border-2 border-gray-300 text-center p-2 rounded-xl h-[120px] flex flex-col items-center justify-center">
+            <div id="add-button" class="form-btn border-2 border-gray-300 text-center p-2 rounded-xl h-[120px] flex flex-col items-center justify-center">
                 <img src="assets/wallet1.png" class="mb-2" alt="">
                 <h2 class="text-[#080808b3]">Add Money</h2>
             </div>
 
-            <div id="cash-out-button" class="border-2 border-gray-300 text-center p-3 rounded-xl h-[120px] flex flex-col items-center justify-center">
+            <div id="cash-out-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-xl h-[120px] flex flex-col items-center justify-center">
                 <img src="assets/send1.png" class="mb-2" alt="">
                 <h2 class="text-[#080808b3]">Cashout</h2>
             </div>
 
-            <div id="transfer-button" class="border-2 border-gray-300 text-center p-2 rounded-xl h-[120px] flex flex-col items-center justify-center">
+            <div id="transfer-button" class="form-btn border-2 border-gray-300 text-center p-2 rounded-xl h-[120px] flex flex-col items-center justify-center">
                 <img src="assets/money1.png" class="mb-2" alt="">
                 <h2 class="text-[#080808b3]">Transfer Money</h2>
             </div>
 
-            <div id="bonas-button" class="border-2 border-gray-300 text-center p-3 rounded-xl h-[120px] flex flex-col items-center justify-center">
+            <div id="bonas-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-xl h-[120px] flex flex-col items-center justify-center">
                 <img src="assets/bonus1.png" class="mb-2" alt="">
                 <h2 class="text-[#080808b3]">Get Bonas</h2>
             </div>
 
-            <div id="payBill-button" class="border-2 border-gray-300 text-center p-3 rounded-xl h-[120px] flex flex-col items-center justify-center">
+            <div id="payBill-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-xl h-[120px] flex flex-col items-center justify-center">
                 <img src="assets/purse1.png" class="mb-2" alt="">
                 <h2 class="text-[#080808b3]">Pay Bill</h2>
             </div>
 
-            <div id="transaction-button" class="border-2 border-gray-300 text-center p-3 rounded-xl h-[120px] flex flex-col items-center justify-center">
+            <div id="transaction-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-xl h-[120px] flex flex-col items-center justify-center">
                 <img src="assets/transaction1.png" class="mb-2" alt="">
                 <h2 class="text-[#080808b3]">Transaction</h2>
             </div>
@@ -177,6 +178,36 @@
         <div class="form" id="pay-bil-parent" style="display: none;">
             <h1 class="text-xl font-bold mt-8 mb-4 ml-3">Pay Bill</h1>
 
+            <form action="" class="bg-white rounded-2xl p-6">
+                <div>
+                    <label class="font-semibold" for="">Select To Pay</label>
+                    <select id="bill" class="select bg-[#f4f5f7] my-3 rounded-3xl w-full">
+                        <option>Select Bill</option>
+                        <option>Electricity Bill</option>
+                        <option>Bank Deposit</option>
+                        <option>Mobile Recharge</option>
+                        <option>Gas Bill</option>
+                        <option>Resturant Bill</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="font-semibold" for="">Biller Account Number</label><br>
+                    <input id="biller-number" type="text" placeholder="Enter account number" class="input bg-[#f4f5f7] my-3 rounded-3xl w-full">
+                </div>
+
+                <div>
+                    <label class="font-semibold" for="">Amount to Pay</label><br>
+                    <input id="pay-amount" type="text" placeholder="Add Amount to pay" class="input bg-[#f4f5f7] my-3 rounded-3xl w-full">
+                </div>
+
+                <div>
+                    <label class="font-semibold" for="">Pin Number</label><br>
+                    <input id="pay-pin" type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7] my-3 rounded-3xl w-full">
+                </div>
+
+                <button id="pay-money-btn" class="btn bg-[#0874F2] text-white mt-6 w-full rounded-3xl">Pay Now</button>
+            </form>
         </div>
 
     </section> 
